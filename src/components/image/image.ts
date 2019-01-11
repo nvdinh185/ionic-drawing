@@ -9,7 +9,7 @@ export class ImageComponent {
 
   text: string;
 
-  src: any = "https://i.stack.imgur.com/8l52T.png";
+  src: any;
 
   constructor(public navParams: NavParams) {
     console.log('Hello ImageComponent Component');
