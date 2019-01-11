@@ -8,12 +8,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 import { CanvasDraw } from '../components/canvas-draw/canvas-draw';
+import { ImageComponent } from '../components/image/image';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CanvasDraw
+    CanvasDraw,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,7 @@ import { CanvasDraw } from '../components/canvas-draw/canvas-draw';
   entryComponents: [
     MyApp,
     HomePage,
+    ImageComponent
   ],
   providers: [
     StatusBar,

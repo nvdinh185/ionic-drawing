@@ -1,5 +1,7 @@
 import { Component, ViewChild, Renderer } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, NavController } from 'ionic-angular';
+
+import { ImageComponent } from '../image/image'
 
 @Component({
   selector: 'canvas-draw',
@@ -17,7 +19,7 @@ export class CanvasDraw {
   availableColours: any;
   brushSize: number = 10;
 
-  constructor(public platform: Platform, public renderer: Renderer) {
+  constructor(public platform: Platform, public renderer: Renderer, public navCtrl: NavController) {
     console.log('Hello CanvasDraw Component');
     this.availableColours = [
       '#1abc9c',
@@ -34,7 +36,6 @@ export class CanvasDraw {
 
     this.renderer.setElementAttribute(this.canvasElement, 'width', this.platform.width() + '');
     this.renderer.setElementAttribute(this.canvasElement, 'height', this.platform.height() + '');
-
   }
 
   changeColour(colour) {
@@ -72,5 +73,13 @@ export class CanvasDraw {
   clearCanvas() {
     let ctx = this.canvasElement.getContext('2d');
     ctx.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height);
+  }
+
+  showImage() {
+    let ctx = this.canvasElement.getContext('2d');
+    ctx.fillRect(0, 0, 0, 0);
+    var img = new Image();
+    img.src = this.canvasElement.toDataURL();
+    this.navCtrl.push(ImageComponent, img.src);
   }
 }
