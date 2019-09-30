@@ -5,16 +5,12 @@ import { NavParams } from 'ionic-angular';
   selector: 'image',
   templateUrl: 'image.html'
 })
-export class ImageComponent {
-
-  text: string;
+export class ImagePage {
 
   src: any;
 
-  constructor(public navParams: NavParams) {
-    console.log('Hello ImageComponent Component');
-    this.text = 'Hello World';
-  }
+  constructor(public navParams: NavParams) {}
+  
   ngOnInit() {
     this.src = this.navParams.data;
   }

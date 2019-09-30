@@ -1,7 +1,7 @@
 import { Component, ViewChild, Renderer } from '@angular/core';
 import { Platform, NavController } from 'ionic-angular';
 
-import { ImageComponent } from '../image/image'
+import { ImagePage } from '../../pages/image/image'
 
 @Component({
   selector: 'canvas-draw',
@@ -80,6 +80,6 @@ export class CanvasDraw {
     ctx.fillRect(0, 0, 0, 0);
     var img = new Image();
     img.src = this.canvasElement.toDataURL();
-    this.navCtrl.push(ImageComponent, img.src);
+    this.navCtrl.push(ImagePage, img.src);
   }
 }

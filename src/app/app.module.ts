@@ -1,21 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
+import { NgModule } from '@angular/core';
+import { IonicApp, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ImagePage } from '../pages/image/image';
 
 import { CanvasDraw } from '../components/canvas-draw/canvas-draw';
-import { ImageComponent } from '../components/image/image';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    ImagePage,
     CanvasDraw,
-    ImageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,12 +23,8 @@ import { ImageComponent } from '../components/image/image';
   entryComponents: [
     MyApp,
     HomePage,
-    ImageComponent
+    ImagePage
   ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  providers: []
 })
 export class AppModule {}
